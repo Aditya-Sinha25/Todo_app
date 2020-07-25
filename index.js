@@ -4,7 +4,7 @@ const port=2000;
 const path =require('path');
 const db =require('./config/mongoose');
 const List =require('./models/user');
-
+const listContoroller =require('./controllers/list');
 
 app.use(express.urlencoded());
 app.use(express.static('./assets'));
@@ -17,6 +17,9 @@ app.get('/',function(req,res){
         title:"TODO APP",
     });
 });
+
+app.post('/create',listContoroller.create);
+
 
 //listen to the port
 app.listen(port,function(err){
