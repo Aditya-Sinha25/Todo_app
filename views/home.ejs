@@ -1,18 +1,25 @@
 <html>
     <head>
         <title>
-            <%= title %>
+            <%= locals.title %>
         </title>
-        <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+        <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
         <h1>TODO_APP</h1>
-        <form action="/create" method ="POST">
-            <input type="text" name="description"  placeholder="Add description" required>
-            <input type="date" name="date" required>
-            <input type="text" name="type" placeholder="Add type">
-            <input type="submit" value="ADD">
-            
-        </form>
+        <div class="card">
+            <form id="create-list" action="/create" method ="POST">
+                <input type="text" name="description"  placeholder="Add description" required>
+                <input type="date" name="date" required>
+                <input type="text" name="type" placeholder="Add type">
+                <input type="submit" value="ADD">
+            </form>
+            <ul>
+                <li>
+                    <%= docs.description %>
+                </li>
+            </ul>
+        </div>
+       
     </body>
 </html>

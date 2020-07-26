@@ -4,19 +4,21 @@ const port=2000;
 const path =require('path');
 const db =require('./config/mongoose');
 const List =require('./models/user');
+const homeController =require('./controllers/home');
 const listContoroller =require('./controllers/list');
 
 app.use(express.urlencoded());
 app.use(express.static('./assets'));
 
+
+
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 
-app.get('/',function(req,res){
-    return res.render('home',{
-        title:"TODO APP",
-    });
-});
+
+
+
+app.get('/',homeController.home);
 
 app.post('/create',listContoroller.create);
 
