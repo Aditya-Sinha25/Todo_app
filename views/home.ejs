@@ -15,12 +15,13 @@
                 <input type="submit" value="ADD">
             </form>
             <ul>
-                <% for(i in doc) {%>
+                <% for(let i of doc) {%>
                     <li>
+                        <small>
+                            <a href="/destroy/<%= i.id %>">X</a>
+                        </small>
                         <%= i.description %>
-                    </li>
-                    <li>
-                        <%= i.type %>
+                        
                     </li>
                 <%} %>
                     

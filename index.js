@@ -21,6 +21,7 @@ app.set('views',path.join(__dirname,'views'));
 app.get('/',homeController.home);
 
 app.post('/create',listContoroller.create);
+app.get('/destroy/:id',listContoroller.destroy);
 
 
 //listen to the port

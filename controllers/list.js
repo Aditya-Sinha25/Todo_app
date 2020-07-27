@@ -14,3 +14,12 @@ module.exports.create =function(req,res){
     });
 
 }
+
+
+
+module.exports.destroy =function(req,res){
+    List.findById(req.params.id,function(err,list){
+        list.remove();
+        return res.redirect('back');
+    });
+}
