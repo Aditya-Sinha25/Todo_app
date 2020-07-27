@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <h1>TODO_APP</h1>
+        <h1>TODO APP</h1>
         <div class="card">
             <form id="create-list" action="/create" method ="POST">
                 <input type="text" name="description"  placeholder="Add description" required>
@@ -15,9 +15,16 @@
                 <input type="submit" value="ADD">
             </form>
             <ul>
-                <li>
-                    <%= docs.description %>
-                </li>
+                <% for(i in doc) {%>
+                    <li>
+                        <%= i.description %>
+                    </li>
+                    <li>
+                        <%= i.type %>
+                    </li>
+                <%} %>
+                    
+                
             </ul>
         </div>
        
