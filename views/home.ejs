@@ -1,33 +1,64 @@
 <html>
     <head>
+      
         <title>
             <%= locals.title %>
         </title>
+        <script src="https://kit.fontawesome.com/f80c4e0252.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
         <h1>TODO APP</h1>
         <div class="card">
             <form id="create-list" action="/create" method ="POST">
-                <input type="text" name="description"  placeholder="Add description" required>
-                <input type="date" name="date" required>
-                <input type="text" name="type" placeholder="Add type">
-                <input type="submit" value="ADD">
-            </form>
-            <ul>
-                <% for(let i of doc) {%>
-                    <li>
-                        <small>
-                            <a href="/destroy/<%= i.id %>">X</a>
-                        </small>
-                        <%= i.description %>
-                        
-                    </li>
-                <%} %>
+                <div id="description">
+                    DESCRIPTION
+                    <br>
+                    <input type="text" name="description"  placeholder="Add description" required>
+                </div>
+                <div id="date">
+                    DATE
+                    <br>
+                    <input type="date" name="date" required>
+                </div>
+                <div id="category">
+                    CATEGORY
+                    <br>
+                    <input type="text" name="type" placeholder="Add type">
+                </div>
+                <div id="submit">
                     
+                    <button type="submit">
+                        <i class="fas fa-plus"></i>
+                        ADD
+                    </button>
+                </div>
                 
-            </ul>
+            </form>
+    
+            
+                <ul class="list">
+                    <% for(let i of doc) {%>
+                        <div class="show">
+                            <li>
+                                <small>
+                                    <a href="/destroy/<%= i.id %>">X</a>
+                                </small>
+                                <%= i.description %>
+                            </li>
+                            <li>
+                                <%= i.date %>
+                            </li>
+                            <li>
+                                <%= i.type %>
+                            </li>
+                        </div>
+                    <%} %>
+                        
+                    
+                </ul>
+            
+
         </div>
-       
     </body>
 </html>
