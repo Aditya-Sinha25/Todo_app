@@ -10,49 +10,42 @@ body{
 h1{
     text-align: center;
 }
+
 .card{
+    position: relative;
     width:600px;
     height:600px;
     margin:auto;
     padding:20px;
-    background-color: slategrey;
+    
+  /*  background-color: slategrey; */
+    background-image: url('/images/card.jpeg');
+    background-size: contain;
     border:1px solid white;
     box-shadow: 10px 10px 8px #888888 ;
     overflow-y: auto;  
 }
+
 #create-list{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width:100%;
 }
-#create-list input{
+#create-list input , select{
     max-width: 90%;
     margin: 15px;
     padding: 4px 8px;
     border: 0px solid transparent;
-    color: #d9dcdd;
     background: transparent;
+    color:grey;
     width: 90%;
     line-height: 1.6;
     font-size: 1.05rem;
     border-bottom:3px solid black;
 }
-#create-list select{
-    max-width: 90%;
-    margin: 15px;
-    padding: 4px 8px;
-    border: 0px solid transparent;
-    color: #d9dcdd;
-    background: transparent;
-    width: 90%;
-    line-height: 1.6;
-    font-size: 1.05rem;
-    border-bottom:3px solid black;
-}
-#crate-list select i{
-    background: transparent;
-}
+
+
 #description{
     display: block;
     width:100%;
@@ -86,8 +79,9 @@ h1{
     height:auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 10px;
-    background-color: #425792;
-    border:2px solid #06153f;
+   /* background-color: #425792; */
+   background:transparent;
+    border:2px solid #6b7591;
     display: flex;
     flex-direction:column;
     align-items: flex-start;
@@ -108,9 +102,16 @@ h1{
     background-color: seagreen;
     padding:5px;
 }
+.show li:nth-child(3) span{
+    font-size: 0.8rem;
+
+}
 .description{
     display: inline-block;
     width:475px;
+}
+.description::first-letter{
+    text-transform: capitalize;
 }
 .delete{
     display: inline-block;
