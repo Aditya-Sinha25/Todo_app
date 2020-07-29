@@ -1,3 +1,5 @@
+//creating the home controller
+
 const List =require('../models/user');
 
 

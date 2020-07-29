@@ -8,19 +8,25 @@
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
+        <!--Heading-->
         <h1>TODO APP</h1>
+        <!--Main div that contains all the elements-->
         <div class="card">
+            <!--Form to collect the information-->
             <form id="create-list" action="/create" method ="POST">
+                <!--Description to be added-->
                 <div id="description">
                     DESCRIPTION
                     <br>
                     <input type="text" name="description"  placeholder="Add description" required>
                 </div>
+                <!--Date-->
                 <div id="date">
                     DATE
                     <br>
                     <input type="date" name="date" required>
                 </div>
+                <!--Dropdown to collect the category-->
                 <div id="category">
                     CATEGORY
                     <br>
@@ -33,6 +39,7 @@
                         <option>Meeting</option>
                     </select>
                 </div>
+                <!--Submit button-->
                 <div id="submit">
                     
                     <button type="submit">
@@ -43,7 +50,7 @@
                 
             </form>
     
-            
+                <!--List to show all the todo lists-->
                 <ul class="list">
                     <% for(let i of doc) {%>
                         <div class="show">

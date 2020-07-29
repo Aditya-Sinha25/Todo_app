@@ -1,5 +1,6 @@
 const List =require('../models/user');
 
+//creating the create controller
 module.exports.create =function(req,res){
     List.create({
         description:req.body.description,
@@ -16,7 +17,7 @@ module.exports.create =function(req,res){
 }
 
 
-
+//creating the destroy controller
 module.exports.destroy =function(req,res){
     List.findById(req.params.id,function(err,list){
         list.remove();

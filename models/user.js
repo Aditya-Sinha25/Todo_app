@@ -1,3 +1,5 @@
+//Setting up the Schema
+
 const mongoose =require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -16,5 +18,6 @@ const userSchema = new mongoose.Schema({
     timestamps:true
 });
 
+//exporting the schema to be used 
 const List =mongoose.model('List',userSchema);
 module.exports =List;
