@@ -1,8 +1,12 @@
+
 body{
     margin:0px;
     background-image: url('/images/back.jpg');
+    background-size: cover;
     color:white;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 h1{
     text-align: center;
 }
@@ -14,6 +18,7 @@ h1{
     background-color: slategrey;
     border:1px solid white;
     box-shadow: 10px 10px 8px #888888 ;
+    overflow-y: auto;  
 }
 #create-list{
     display: flex;
@@ -24,7 +29,7 @@ h1{
 #create-list input{
     max-width: 90%;
     margin: 15px;
-    padding: 4px 10px;
+    padding: 4px 8px;
     border: 0px solid transparent;
     color: #d9dcdd;
     background: transparent;
@@ -32,6 +37,21 @@ h1{
     line-height: 1.6;
     font-size: 1.05rem;
     border-bottom:3px solid black;
+}
+#create-list select{
+    max-width: 90%;
+    margin: 15px;
+    padding: 4px 8px;
+    border: 0px solid transparent;
+    color: #d9dcdd;
+    background: transparent;
+    width: 90%;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    border-bottom:3px solid black;
+}
+#crate-list select i{
+    background: transparent;
 }
 #description{
     display: block;
@@ -58,17 +78,41 @@ h1{
     font-size: 2rem;
     background-color: red;
 }
+.list{
+    list-style:none;
+     
+}
 .show{
+    height:auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 10px;
-    text-align: center;
     background-color: #425792;
     border:2px solid #06153f;
     display: flex;
     flex-direction:column;
-    align-items: center;
+    align-items: flex-start;
+    border-radius: 20px;
     margin-top: 2px;
 }
-.list{
-    list-style:none;
+.show li{
+    margin-top: 10px;
+}
+.show li a{
+    text-decoration: none;
+    color:white;
+}
+
+.show li:nth-child(2) span{
+    height: auto;
+    width: auto;
+    background-color: seagreen;
+    padding:5px;
+}
+.description{
+    display: inline-block;
+    width:475px;
+}
+.delete{
+    display: inline-block;
+    width:25px;
 }

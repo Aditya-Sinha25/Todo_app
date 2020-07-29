@@ -24,7 +24,14 @@
                 <div id="category">
                     CATEGORY
                     <br>
-                    <input type="text" name="type" placeholder="Add type">
+                    <select name="type">
+                        <option disabled selected hidden>Choose a Category</option>
+                        <option>Work</option>
+                        <option>School</option>
+                        <option>Urgent</option>
+                        <option>Exam</option>
+                        <option>Meeting</option>
+                    </select>
                 </div>
                 <div id="submit">
                     
@@ -41,16 +48,21 @@
                     <% for(let i of doc) {%>
                         <div class="show">
                             <li>
-                                <small>
-                                    <a href="/destroy/<%= i.id %>">X</a>
-                                </small>
-                                <%= i.description %>
+                                <div class="description"><%= i.description %></div>
+                                <div class="delete">
+                                    <a href="/destroy/<%= i.id %>">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                                
                             </li>
                             <li>
+                                Category:
+                               <span><%= i.type %></span> 
+                            </li>
+                            <li>
+                                <i class="fas fa-calendar-week"></i>
                                 <%= i.date %>
-                            </li>
-                            <li>
-                                <%= i.type %>
                             </li>
                         </div>
                     <%} %>
